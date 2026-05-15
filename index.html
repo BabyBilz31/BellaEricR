@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Wedding Bella&Eric</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Poppins',sans-serif;
+    background:#000;
+    color:white;
+    overflow-x:hidden;
+}
+
+/* BACKGROUND MEWAH */
+
+.hero{
+    height:100vh;
+
+    background:
+    linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)),
+    url('img/ARCL4825\ \(1\).jpg');
+
+    background-size:cover;
+    background-position:center;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+
+    position:relative;
+}
+
+/* EFEK GOLD */
+
+.hero::before{
+    content:'';
+    position:absolute;
+    width:100%;
+    height:100%;
+    background:
+    radial-gradient(circle at top left,
+    rgba(212,175,55,0.3),
+    transparent 40%);
+
+}
+
+/* KONTEN */
+
+.content{
+    position:relative;
+    z-index:2;
+    animation:fadeIn 2s ease;
+    padding:20px;
+}
+
+.content h1{
+    font-family:'Great Vibes',cursive;
+    font-size:90px;
+    color:#d4af37;
+    margin-bottom:10px;
+}
+
+.content h2{
+    font-size:40px;
+    font-weight:300;
+    margin-bottom:20px;
+}
+
+.content p{
+    font-size:18px;
+    margin-bottom:30px;
+}
+
+/* BUTTON */
+
+.btn{
+    padding:15px 40px;
+    border:none;
+    border-radius:50px;
+    background:linear-gradient(45deg,#d4af37,#f6e27a);
+    color:#000;
+    font-size:18px;
+    font-weight:bold;
+    cursor:pointer;
+    transition:0.4s;
+}
+
+.btn:hover{
+    transform:scale(1.1);
+    box-shadow:0 0 20px #d4af37;
+}
+
+/* SECTION */
+
+.section{
+    padding:100px 20px;
+    background: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)),
+    url('img/yang\ ini\ \(1\).jpg');
+    background-size:cover;
+    background-position:center;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+
+    position:relative;
+}
+
+.card{
+    max-width:1000px;
+    margin:auto;
+
+    background:rgba(255,255,255,0.05);
+
+    backdrop-filter:blur(10px);
+
+    border:1px solid rgba(255,255,255,0.1);
+
+    border-radius:30px;
+
+    padding:50px;
+
+    text-align:center;
+
+    box-shadow:0 10px 40px rgba(0,0,0,0.5);
+}
+
+.card h2{
+    font-family:'Great Vibes',cursive;
+    font-size:60px;
+    color:#d4af37;
+    margin-bottom:20px;
+}
+
+/* FOTO */
+
+.couple{
+    display:flex;
+    justify-content:center;
+    gap:40px;
+    flex-wrap:wrap;
+    margin-top:50px;
+}
+
+.person{
+    width:320px;
+}
+
+.person img{
+    width:100%;
+    height:400px;
+    object-fit:cover;
+
+    border-radius:20px;
+
+    border:4px solid #d4af37;
+
+    box-shadow:0 0 25px rgba(212,175,55,0.5);
+
+    transition:0.5s;
+}
+
+.person img:hover{
+    transform:scale(1.03);
+}
+
+.person h3{
+    margin-top:20px;
+    font-size:35px;
+    color:#d4af37;
+}
+
+/* COUNTDOWN */
+
+.countdown{
+    margin-top:50px;
+    font-size:40px;
+    color:#f6e27a;
+    font-weight:bold;
+}
+
+/* FOOTER */
+
+footer{
+    background:#000;
+    text-align:center;
+    padding:30px;
+    color:#aaa;
+}
+
+/* ANIMATION */
+
+@keyframes fadeIn{
+
+    from{
+        opacity:0;
+        transform:translateY(40px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+
+}
+
+/* RESPONSIVE */
+
+@media(max-width:768px){
+
+    .content h1{
+        font-size:60px;
+    }
+
+    .content h2{
+        font-size:28px;
+    }
+
+    .card h2{
+        font-size:45px;
+    }
+
+    .countdown{
+        font-size:25px;
+    }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- MUSIC -->
+
+<audio id="music" loop>
+    <source src="music/Canon in D - Pachelbel violin cover [BEST WEDDING VERSION].mp3" type="audio/mpeg">
+</audio>
+
+<!-- HERO -->
+
+<section class="hero">
+
+    <div class="content">
+
+        <h1>Wedding Invitation</h1>
+
+        <h2>Bella & Eric </h2>
+
+        <p>04 Juli 2026</p>
+        <div style="margin-top:50px;"></div>
+
+        <p>Kepada Saudara/I:</p>
+
+        <p style="font-size:60px;">
+    Rival & Antoni
+</p>
+        
+        <div style="margin-top:80px;"></div>
+
+        <button class="btn" onclick="openInvitation()">
+            Buka Undangan
+        </button>
+
+    </div>
+
+</section>
+
+<!-- CONTENT -->
+
+<section class="section">
+
+    <div class="card">
+
+        <h2>Assalamu’alaikum Wr. Wb.</h2>
+
+        <p>
+            Dengan memohon rahmat dan ridho Allah SWT,
+            kami mengundang Bapak/Ibu/Saudara/i
+            untuk hadir dalam acara pernikahan kami.
+        </p>
+
+        <!-- FOTO -->
+
+        <div class="couple">
+
+            <div class="person">
+
+                <img src="img/ARCL5977 bela.jpg">
+
+                <h3>Shyndi Bella Ananda </h3>
+
+                <p>Putri Dari Bapak Antoni & Ibu Erni (alm)</p>
+
+            </div>
+
+            <div class="person">
+
+                <img src="img/ARCL5991 Eric.jpg">
+
+                <h3>Erik Refaldo </h3>
+                <div style="margin-top:50px;">
+
+                <p>Putra Dari Bapak Emsi & Descik Laisa</p>
+
+            </div>
+
+        </div>
+
+        <!-- ACARA -->
+
+        <div style="margin-top:80px;">
+            <div style="font-size: 35px">
+
+            <h2>Akad Nikah</h2>
+
+            <p>Sabtu , 04 Juli 2026</p>
+
+            <p>Pukul 09.00 WIB-Selesai</p>
+
+            <p>Liku Kranget Desa Batu Lintang Padang Tepong</p>
+
+        </div>
+
+        <!-- COUNTDOWN -->
+
+        <div class="countdown" id="countdown"></div>
+
+    </div>
+
+</section>
+
+<footer>
+    Luxury Wedding Invitation Bella & Eric © 2026
+</footer>
+
+<script>
+
+/* MUSIK */
+
+function openInvitation(){
+
+    document.getElementById('music').play();
+
+    window.scrollTo({
+        top:window.innerHeight,
+        behavior:'smooth'
+    });
+
+}
+
+/* COUNTDOWN */
+
+const weddingDate = new Date("Juli 04, 2026 09:00:00").getTime();
+
+const x = setInterval(function(){
+
+    const now = new Date().getTime();
+
+    const distance = weddingDate - now;
+
+    const days = Math.floor(distance / (1000*60*60*24));
+
+    const hours = Math.floor((distance % (1000*60*60*24)) / (1000*60*60));
+
+    const minutes = Math.floor((distance % (1000*60*60)) / (1000*60));
+
+    const seconds = Math.floor((distance % (1000*60)) / 1000);
+
+    document.getElementById("countdown").innerHTML =
+
+    days + " Hari " +
+    hours + " Jam " +
+    minutes + " Menit " +
+    seconds + " Detik";
+
+    if(distance < 0){
+
+        clearInterval(x);
+
+        document.getElementById("countdown").innerHTML =
+        "Acara Sedang Berlangsung";
+
+    }
+
+},1000);
+
+</script>
+
+<input id="name" placeholder="Masukkan nama">
+
+<button onclick="sendWA()">
+Kirim Undangan
+</button>
+
+<script>
+function sendWA(){
+
+let name = document.getElementById("name").value;
+
+let link = "https://wa.me/082248649334text=" +
+"Undangan%20pernikahan%20untuk%20" +
+name +
+"%20:%20https://websitekamu.com/?to=" + name;
+
+window.open(link, "_blank");
+
+}
+</script>
+
+</body>
+</html>
