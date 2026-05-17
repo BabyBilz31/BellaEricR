@@ -3,6 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- PASANG DI <head> -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
 <title>Wedding Bella&Eric</title>
 
@@ -239,20 +241,867 @@ footer{
     }
 
 }
+/* ================= BACKGROUND SECTION ================= */
+.cinema-gallery{
+    position:relative;
+    height:100vh;
+    overflow:hidden;
+    background:#000;
+    font-family:'Poppins',sans-serif;
+}
 
+/* BACKGROUND BLUR */
+.bg-layer img{
+    position:absolute;
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    filter:blur(20px) brightness(0.4);
+    transform:scale(1.2);
+    transition:0.5s;
+}
+
+/* MAIN IMAGE */
+.viewer{
+    position:absolute;
+    inset:0;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.viewer img{
+    width:85%;
+    max-width:500px;
+    border-radius:18px;
+
+    box-shadow:
+        0 20px 60px rgba(0,0,0,0.6),
+        0 0 20px rgba(245,215,125,0.3);
+
+    animation:zoomIn 0.6s ease;
+}
+
+/* THUMBNAILS */
+.thumbs{
+    position:absolute;
+    bottom:20px;
+    left:50%;
+    transform:translateX(-50%);
+
+    display:flex;
+    gap:8px;
+
+    overflow-x:auto;
+    padding:8px;
+    max-width:90%;
+}
+
+.thumbs img{
+    width:60px;
+    height:60px;
+    object-fit:cover;
+    border-radius:10px;
+    cursor:pointer;
+
+    opacity:0.7;
+    transition:0.3s;
+    border:2px solid transparent;
+}
+
+.thumbs img:hover{
+    opacity:1;
+    transform:scale(1.1);
+    border-color:#f5d77d;
+}
+
+/* ANIMATION */
+@keyframes zoomIn{
+    from{transform:scale(0.8);opacity:0;}
+    to{transform:scale(1);opacity:1;}
+}
+
+/* MOBILE */
+@media(max-width:768px){
+    .viewer img{
+        width:90%;
+    }
+
+    .thumbs img{
+        width:50px;
+        height:50px;
+    }
+}
+/* ================= SECTION LOKASI ================= */
+.lokasi{
+    padding:70px 20px;
+    text-align:center;
+    background:linear-gradient(to bottom,#2d1d04,#100f0f);
+}
+
+.lokasi h2{
+    font-family:'Cormorant Garamond', serif;
+    font-size:32px;
+    color:#c9a24e;
+    margin-bottom:8px;
+}
+
+.lokasi p{
+    color:#ffffff;
+    margin-bottom:20px;
+}
+
+/* ================= FOTO RUMAH ================= */
+.rumah{
+    max-width:500px;
+    margin:auto;
+    margin-bottom:20px;
+    border-radius:18px;
+    overflow:hidden;
+
+    box-shadow:0 10px 30px rgba(0,0,0,0.2);
+    transition:0.4s;
+}
+
+.rumah img{
+    width:100%;
+    height:250px;
+    object-fit:cover;
+    transition:0.5s;
+}
+
+/* hover elegan */
+.rumah:hover img{   
+    transform:scale(1.05);
+}
+
+/* ================= MAPS ================= */
+.maps{
+    max-width:600px;
+    margin:auto;
+    border-radius:18px;
+    overflow:hidden;
+
+    box-shadow:0 10px 30px rgba(0,0,0,0.2);
+}
+
+.maps iframe{
+    width:100%;
+    height:300px;
+    border:none;
+}
+
+/* MOBILE */
+@media(max-width:768px){
+    .rumah img{
+        height:200px;
+    }
+
+    .maps iframe{
+        height:250px;
+    }
+}
+
+.social-icons a {
+    font-size: 30px;
+    margin: 20px;
+    color: #d8cdcd;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.social-icons a:hover {
+    color: #3567dd;
+}
+
+.bismillah{
+    font-size: 60px;
+    text-align: center;
+    direction: rtl;
+    font-family: 'Amiri', serif;
+    margin: 20px 0;
+    color: #eebf05;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+body{
+    margin:0;
+    padding:0;
+    font-family:'Poppins', sans-serif;
+}
+
+/* SECTION */
+.love-story{
+    position:relative;
+    padding:10px 2px;
+    background:linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)), url(img/tunangan.jpeg);
+    background-size:cover;
+    background-position:center;
+    overflow:hidden;
+}
+
+/* TITLE */
+.love-title{
+    text-align:center;
+    font-size:48px;
+    color:#e3ae1c;
+    margin-bottom:10px;
+    animation:fadeDown 1.5s ease;
+}
+
+.love-subtitle{
+    text-align:center;
+    color:#e8921a;
+    margin-bottom:80px;
+    animation:fadeUp 1.5s ease;
+}
+
+/* STORY ITEM */
+.story-item{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:50px;
+    margin-bottom:100px;
+    position:relative;
+}
+
+/* ZIGZAG */
+.story-item.right{
+    flex-direction:row-reverse;
+}
+
+/* IMAGE */
+.story-image{
+    width:320px;
+    position:relative;
+    animation:floatImage 4s ease-in-out infinite;
+}
+
+.story-image img{
+    width:100%;
+    border-radius:30px;
+    object-fit:cover;
+    box-shadow:0 15px 40px rgba(0,0,0,0.15);
+    transition:0.5s;
+}
+
+.story-image img:hover{
+    transform:scale(1.05) rotate(1deg);
+}
+
+/* CONTENT */
+.story-content{
+    max-width:450px;
+    background:rgba(255,255,255,0.75);
+    backdrop-filter:blur(12px);
+    padding:35px;
+    border-radius:25px;
+    box-shadow:0 10px 35px rgba(0,0,0,0.08);
+    animation:fadeUp 1.5s ease;
+}
+
+.story-content span{
+    color:#d67b8a;
+    font-weight:600;
+    font-size:14px;
+}
+
+.story-content h3{
+    font-size:32px;
+    margin:10px 0;
+    color:#333;
+}
+
+.story-content p{
+    color:#666;
+    line-height:1.8;
+}
+
+/* LINE */
+.story-item::after{
+    content:'';
+    position:absolute;
+    width:4px;
+    height:100%;
+    background:#f0c4cb;
+    left:50%;
+    top:60%;
+    z-index:-1;
+}
+
+/* LAST CHILD REMOVE LINE */
+.story-item:last-child::after{
+    display:none;
+}
+
+/* ANIMATIONS */
+@keyframes fadeUp{
+    from{
+        opacity:0;
+        transform:translateY(50px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+@keyframes fadeDown{
+    from{
+        opacity:0;
+        transform:translateY(-50px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+@keyframes floatImage{
+    0%{
+        transform:translateY(0px);
+    }
+    50%{
+        transform:translateY(-15px);
+    }
+    100%{
+        transform:translateY(0px);
+    }
+}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+
+.story-item,
+.story-item.right{
+    flex-direction:column;
+    text-align:center;
+}
+
+.story-item::after{
+    left:50%;
+    top:100%;
+    height:80px;
+}
+
+.story-image{
+    width:100%;
+    max-width:300px;
+}
+
+.story-content{
+    padding:25px;
+}
+
+.love-title{
+    font-size:38px;
+}
+}
+
+        
+        /* SECTION */
+.comment-section{
+    padding:100px 20px;
+    background:linear-gradient(to bottom,#fff,#fff5f7);
+    text-align:center;
+}
+
+/* TITLE */
+.comment-title{
+    font-size:45px;
+    color:#d67b8a;
+    margin-bottom:10px;
+    animation:fadeDown 1s ease;
+}
+
+.comment-subtitle{
+    color:#777;
+    margin-bottom:50px;
+}
+
+/* FORM */
+.comment-form{
+    max-width:600px;
+    margin:auto;
+    background:rgba(255,255,255,0.7);
+    backdrop-filter:blur(12px);
+    padding:35px;
+    border-radius:30px;
+    box-shadow:0 10px 40px rgba(0,0,0,0.08);
+    animation:fadeUp 1.2s ease;
+}
+
+.comment-form input,
+.comment-form textarea{
+    width:100%;
+    padding:18px;
+    margin-bottom:20px;
+    border:none;
+    border-radius:18px;
+    background:#fff;
+    font-size:15px;
+    outline:none;
+    box-shadow:0 5px 20px rgba(0,0,0,0.05);
+    transition:0.3s;
+}
+
+.comment-form input:focus,
+.comment-form textarea:focus{
+    transform:scale(1.02);
+}
+
+.comment-form button{
+    background:linear-gradient(45deg,#d67b8a,#f3a6b3);
+    color:#fff;
+    border:none;
+    padding:15px 35px;
+    border-radius:50px;
+    font-size:16px;
+    cursor:pointer;
+    transition:0.4s;
+    box-shadow:0 10px 25px rgba(214,123,138,0.3);
+}
+
+.comment-form button:hover{
+    transform:translateY(-3px) scale(1.05);
+}
+
+/* COMMENT LIST */
+.comment-list{
+    max-width:750px;
+    margin:60px auto 0;
+    display:flex;
+    flex-direction:column;
+    gap:25px;
+}
+
+/* CARD */
+.comment-card{
+    background:rgba(255,255,255,0.8);
+    backdrop-filter:blur(10px);
+    padding:25px;
+    border-radius:25px;
+    text-align:left;
+    box-shadow:0 10px 30px rgba(0,0,0,0.08);
+    animation:showComment 0.8s ease;
+    position:relative;
+    overflow:hidden;
+}
+
+.comment-card::before{
+    content:'❤';
+    position:absolute;
+    right:20px;
+    top:15px;
+    font-size:50px;
+    color:rgba(214,123,138,0.08);
+}
+
+.comment-card h4{
+    margin:0;
+    color:#d67b8a;
+    font-size:18px;
+}
+
+.comment-card p{
+    color:#555;
+    line-height:1.8;
+    margin:12px 0;
+}
+
+.comment-card span{
+    color:#999;
+    font-size:13px;
+}
+
+/* ANIMATION */
+@keyframes fadeUp{
+    from{
+        opacity:0;
+        transform:translateY(40px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+@keyframes fadeDown{
+    from{
+        opacity:0;
+        transform:translateY(-40px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+@keyframes showComment{
+    from{
+        opacity:0;
+        transform:scale(0.9);
+    }
+    to{
+        opacity:1;
+        transform:scale(1);
+    }
+}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+
+.comment-title{
+    font-size:35px;
+}
+
+.comment-form{
+    padding:25px;
+}
+
+}
 </style>
+</section>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Poppins:wght@300;400;500&display=swap');
+
+body{
+    margin:0;
+    padding:0;
+    font-family:'Poppins',sans-serif;
+}
+
+/* SECTION */
+.countdown-section{
+    position:relative;
+    padding:25px 25px;
+    text-align:center;
+    overflow:hidden;
+    background:
+    radial-gradient(circle at top,#3a2a08,#120d02 70%);
+}
+
+/* GOLD GLOW */
+.countdown-section::before{
+    content:'';
+    position:absolute;
+    width:600px;
+    height:600px;
+    background:rgba(255,215,0,0.08);
+    border-radius:50%;
+    top:-250px;
+    left:50%;
+    transform:translateX(-50%);
+    filter:blur(80px);
+}
+
+/* TITLE */
+.countdown-title{
+    color:#f7d774;
+    font-size:48px;
+    margin-bottom:60px;
+    font-family:'Cinzel',serif;
+    letter-spacing:2px;
+    animation:fadeDown 1.5s ease;
+    text-shadow:
+    0 0 10px rgba(255,215,0,0.5),
+    0 0 20px rgba(255,215,0,0.3);
+}
+
+/* CONTAINER */
+.countdown-container{
+    display:flex;
+    justify-content:center;
+    gap:25px;
+    flex-wrap:wrap;
+}
+
+/* BOX */
+.time-box{
+    width:160px;
+    height:170px;
+    border-radius:30px;
+    background:rgba(255,255,255,0.06);
+    backdrop-filter:blur(12px);
+    border:1px solid rgba(255,215,0,0.2);
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    position:relative;
+    overflow:hidden;
+    box-shadow:
+    0 10px 40px rgba(0,0,0,0.5),
+    inset 0 0 20px rgba(255,215,0,0.08);
+    animation:floatBox 4s ease-in-out infinite;
+}
+
+/* GOLD SHINE */
+.time-box::before{
+    content:'';
+    position:absolute;
+    top:-120%;
+    left:-50%;
+    width:200%;
+    height:200%;
+    background:linear-gradient(
+        120deg,
+        transparent,
+        rgba(255,255,255,0.15),
+        transparent
+    );
+    transform:rotate(25deg);
+    animation:shine 5s linear infinite;
+}
+
+/* NUMBER */
+.time-box span{
+    font-size:55px;
+    font-weight:700;
+    color:#ffd95a;
+    font-family:'Cinzel',serif;
+    text-shadow:
+    0 0 10px rgba(255,215,0,0.7),
+    0 0 20px rgba(255,215,0,0.4);
+}
+
+/* TEXT */
+.time-box small{
+    margin-top:10px;
+    color:#fff4c9;
+    font-size:18px;
+    letter-spacing:1px;
+}
+
+/* ANIMATION */
+@keyframes shine{
+    0%{
+        transform:translateX(-100%) rotate(25deg);
+    }
+    100%{
+        transform:translateX(100%) rotate(25deg);
+    }
+}
+
+@keyframes floatBox{
+    0%{
+        transform:translateY(0px);
+    }
+    50%{
+        transform:translateY(-12px);
+    }
+    100%{
+        transform:translateY(0px);
+    }
+}
+
+@keyframes fadeDown{
+    from{
+        opacity:0;
+        transform:translateY(-40px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+
+.countdown-title{
+    font-size:34px;
+}
+
+.time-box{
+    width:130px;
+    height:140px;
+}
+
+.time-box span{
+    font-size:42px;
+}
+
+.time-box small{
+    font-size:15px;
+}
+
+}
+</style>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Cinzel:wght@500&display=swap');
+
+body{
+    font-family:'Poppins',sans-serif;
+}
+
+/* SECTION */
+.gift-section{
+    padding:100px 20px;
+    text-align:center;
+    background:
+    linear-gradient(180deg,#1a5ba591,#fff8ef);
+}
+
+/* TITLE */
+.gift-title{
+    font-size:48px;
+    color:#eff1f4;
+    font-family:'Cinzel',serif;
+    margin-bottom:15px;
+}
+
+.gift-subtitle{
+    max-width:700px;
+    margin:auto;
+    color:#f5efef;
+    line-height:1.8;
+    margin-bottom:60px;
+}
+
+/* CARD */
+.gift-card{
+    max-width:450px;
+    margin:auto;
+    padding:40px 30px;
+    border-radius:35px;
+    background:rgba(234, 235, 242, 0.8);
+    backdrop-filter:blur(12px);
+
+    box-shadow:
+    0 15px 40px rgba(0,0,0,0.08);
+
+    position:relative;
+    overflow:hidden;
+
+    animation:fadeUp 1.5s ease;
+}
+
+/* GOLD SHINE */
+.gift-card::before{
+    content:'';
+    position:absolute;
+    width:200%;
+    height:200%;
+    background:linear-gradient(
+        120deg,
+        transparent,
+        rgba(212, 211, 207, 0.1),
+        transparent
+    );
+
+    top:-100%;
+    left:-100%;
+    transform:rotate(25deg);
+
+    animation:shine 5s linear infinite; 
+}
+
+/* LOGO */
+.bank-logo{
+    width:130px;
+    margin-bottom:25px;
+}
+
+/* TITLE BANK */
+.gift-card h3{
+    font-size:32px;
+    color:#144c9f;
+    margin-bottom:30px;
+}
+
+/* REKENING */
+.rekening-box{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:15px;
+    background:#d9cece;
+    padding:18px 25px;
+    border-radius:20px;
+    box-shadow:0 5px 20px rgba(0,0,0,0.05);
+}
+
+.rekening-box span{
+    font-size:24px;
+    font-weight:600;
+    color:#000000;
+    letter-spacing:2px;
+}
+
+/* BUTTON */
+.rekening-box button{
+    background:linear-gradient(45deg,#0c6cc1,#f7d774);
+    border:none;
+    padding:12px 22px;
+    border-radius:50px;
+    color:#fff;
+    cursor:pointer;
+    font-weight:500;
+    transition:0.4s;
+}
+
+.rekening-box button:hover{
+    transform:scale(1.05);
+}
+
+/* NAME */
+.atas-nama{
+    margin-top:30px;
+    color:#000000;
+    font-size:18px;
+}
+
+/* ANIMATION */
+@keyframes fadeUp{
+    from{
+        opacity:0;
+        transform:translateY(50px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+@keyframes shine{
+    0%{
+        transform:translateX(-100%) rotate(25deg);
+    }
+    100%{
+        transform:translateX(100%) rotate(25deg);
+    }
+}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+
+.gift-title{
+    font-size:36px;
+}
+
+.rekening-box{
+    flex-direction:column;
+}
+
+.rekening-box span{
+    font-size:20px;
+}
+
+}
+</style>
+
+
+
 </head>
+
+<body>
     
-<body>
-
-<div class="wrapper">
-    <img src="cover.jpg" alt="cover">
-</div>
-
-</body>
-</html>
-
-<body>
+    
 
 <!-- MUSIC -->
 
@@ -276,7 +1125,7 @@ footer{
         <p>Kepada Saudara/I:</p>
 
         <p style="font-size:60px;">
-         Sefti & Leo guspito
+    Sefti & Leo Guspito
 </p>
         
         <div style="margin-top:80px;"></div>
@@ -289,13 +1138,16 @@ footer{
 
 </section>
 
+
 <!-- CONTENT -->
 
 <section class="section">
 
     <div class="card">
-
-        <h2>Assalamu’alaikum Wr. Wb.</h2>
+        <div class="bismillah">
+    بِسْمِ ٱللَّٰهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ
+</div>
+          <h2>Assalamu’alaikum Wr. Wb.</h2>
 
         <p>
             Dengan memohon rahmat dan ridho Allah SWT,
@@ -310,6 +1162,23 @@ footer{
             <div class="person">
 
                 <img src="img/ARCL5977 bela.jpg">
+               
+                <!-- Font Awesome CDN -->
+
+                <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+                <div class="social-icons">
+                 <!-- Facebook -->
+                <a href="https://facebook.com/ShyndiBellaAnanda" target="_blank">
+                <i class="fa-brands fa-facebook"></i>
+             </a>
+
+                    <!-- Instagram -->
+                <a href="https://instagram.com/ShyndiBellaAnanda" target="_blank">
+                  <i class="fa-brands fa-instagram"></i>
+             </a>
+        </div>
+
 
                 <h3>Shyndi Bella Ananda </h3>
 
@@ -320,6 +1189,21 @@ footer{
             <div class="person">
 
                 <img src="img/ARCL5991 Eric.jpg">
+                <!-- Font Awesome CDN -->
+
+                <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+                <div class="social-icons">
+                 <!-- Facebook -->
+                <a href="https://www.facebook.com/share/18SW7VNzKC/?mibextid=wwXIfr">
+                <i class="fa-brands fa-facebook"></i>
+             </a>
+
+                    <!-- Instagram -->
+                <a href="https://www.instagram.com/erikrvdo_?igsh=MWJrM3Z1NmdxaTczMQ==&utm_source=ig_contact_invite">
+                  <i class="fa-brands fa-instagram"></i>
+             </a>
+        </div>
 
                 <h3>Erik Refaldo </h3>
                 <div style="margin-top:50px;">
@@ -335,23 +1219,181 @@ footer{
         <div style="margin-top:80px;">
             <div style="font-size: 35px">
 
-            <h2>Akad Nikah</h2>
+            <h2>Akad Nikah  &  Resepsi</h2>
 
-            <p>Sabtu , 04 Juli 2026</p>
+            <p>Sabtu,minggu , 04-05 Juli 2026</p>
 
             <p>Pukul 09.00 WIB-Selesai</p>
 
             <p>Liku Kranget Desa Batu Lintang Padang Tepong</p>
 
         </div>
+        <!-- COUNTDOWN TIMER GOLD LUXURY -->
+<section class="countdown-section">
 
-        <!-- COUNTDOWN -->
+    <h2 class="countdown-title">
+        Countdown To Wedding Day
+    </h2>
 
-        <div class="countdown" id="countdown"></div>
+    <div class="countdown-container">
+
+        <div class="time-box">
+            <span id="days">00</span>
+            <small>Hari</small>
+        </div>
+
+        <div class="time-box">
+            <span id="hours">00</span>
+            <small>Jam</small>
+        </div>
+
+        <div class="time-box">
+            <span id="minutes">00</span>
+            <small>Menit</small>
+        </div>
+
+        <div class="time-box">
+            <span id="seconds">00</span>
+            <small>Detik</small>
+        </div>
 
     </div>
 
 </section>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- LOVE STORY SECTION -->
+<section class="love-story">
+
+    <h2 class="love-title">Our Love Story</h2>
+    <p class="love-subtitle">
+        Kisah perjalanan cinta kami yang penuh doa, tawa, dan kebahagiaan.
+    </p>
+
+    <!-- ITEM 1 -->
+    <div class="story-item left">
+        <div class="story-image">
+            <img src="img/back.jpeg"alt="photo 1">
+        </div>
+
+        <div class="story-content">
+            <span>💖 april 2023</span>
+            <h3>Pertama Bertemu</h3>
+            <p>
+                Tidak ada yang kebetulan di dunia ini. 
+                Pertemuan sederhana itu menjadi awal kisah cinta kami.
+            </p>
+        </div>
+    </div>
+
+    <!-- ITEM 2 -->
+    <div class="story-item right">
+        <div class="story-image">
+            <img src="img/slide 3.jpg"alt="Foto 2">
+        </div>
+
+        <div class="story-content">
+            <span>💍 mei 2023</span>
+            <h3>Menjalin Hubungan</h3>
+            <p>
+                Hari demi hari kami lewati bersama, 
+                hingga cinta tumbuh semakin indah dan bermakna.
+            </p>
+        </div>
+    </div>
+
+    <!-- ITEM 3 -->
+    <div class="story-item left">
+        <div class="story-image">
+            <img src="img/yang ini (1).jpg" alt="Foto 3">
+        </div>
+
+        <div class="story-content">
+            <span>✨ Mei 2026</span>
+            <h3>Menuju Hari Bahagia</h3>
+            <p>
+                Dengan restu keluarga dan doa terbaik, 
+                kami melangkah menuju ikatan suci pernikahan.
+            </p>
+        </div>
+    </div>
+
+</section>
+
+<!-- WEDDING GIFT / TRANSFER -->
+<section class="gift-section">
+
+    <h2 class="gift-title">
+        Wedding Gift
+    </h2>
+
+    <p class="gift-subtitle">
+        Doa restu Anda merupakan karunia yang sangat berarti bagi kami.  
+        Namun jika memberi adalah bentuk tanda kasih, Anda dapat memberikan hadiah melalui:
+    </p>
+
+    <!-- CARD -->
+    <div class="gift-card">
+
+        <img 
+            src="https://upload.wikimedia.org/wikipedia/commons/6/68/BANK_BRI_logo.svg" 
+            alt="BRI"
+            class="bank-logo"
+        >
+
+        <h3>Bank BRI</h3>
+
+        <div class="rekening-box">
+            <span id="rekening">
+                567701037153539
+            </span>
+
+            <button onclick="copyRekening()">
+                Salin
+            </button>
+        </div>
+
+        <p class="atas-nama">
+           Shyndi Bella Ananda
+        </p>
+
+    </div>
+
+</section>
+
+<!-- ================= LOKASI ACARA ================= -->
+<section class="lokasi">
+
+    <h2>Lokasi Acara</h2>
+    <p>Silakan datang ke lokasi berikut</p>
+
+    <!-- FOTO RUMAH -->
+    <div class="rumah">
+        <img src="img/balap erik.jpeg" alt="Rumah Mempelai">
+    </div>
+    <h1>Terimah Kasih Atas Kehadiran</h1>
+    <p>bapak/ibu saudara/1</p>
+
+    <!-- MAPS -->
+    <div class="maps">
+        <iframe 
+        src="https://www.google.com/maps/place/Batu+Lintang,+Kec.+Ulu+Musi,+Kabupaten+Empat+Lawang,+Sumatera+Selatan/@-3.6872388,102.7460118,13z/data=!3m1!4b1!4m6!3m5!1s0x2e36d5743a33e63d:0xf3ff879134eed759!8m2!3d-3.6879424!4d102.7968507!16s%2Fg%2F12hhhkdxy?entry=ttu&g_ep=EgoyMDI2MDUxMy4wIKXMDSoASAFQAw%3D%3D" 
+        allowfullscreen="" loading="lazy">
+        </iframe>
+    </div>
+
+</section>
+
+<!-- LIGHTBOX -->
+<div id="lightbox" onclick="closeLightbox()">
+    <img id="lightbox-img">
+</div>
+
 
 <footer>
     Luxury Wedding Invitation Bella & Eric © 2026
@@ -371,65 +1413,115 @@ function openInvitation(){
     });
 
 }
+</script>
+<script>
+// TANGGAL ACARA
+const weddingDate = new Date("juli 04,2026 10:00:00").getTime();
 
-/* COUNTDOWN */
-
-const weddingDate = new Date("Juli 04, 2026 09:00:00").getTime();
-
-const x = setInterval(function(){
+const countdown = setInterval(function(){
 
     const now = new Date().getTime();
 
     const distance = weddingDate - now;
 
-    const days = Math.floor(distance / (1000*60*60*24));
+    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
 
-    const hours = Math.floor((distance % (1000*60*60*24)) / (1000*60*60));
+    const hours = Math.floor(
+        (distance % (1000 * 60 * 60 * 24))
+        / (1000 * 60 * 60)
+    );
 
-    const minutes = Math.floor((distance % (1000*60*60)) / (1000*60));
+    const minutes = Math.floor(
+        (distance % (1000 * 60 * 60))
+        / (1000 * 60)
+    );
 
-    const seconds = Math.floor((distance % (1000*60)) / 1000);
+    const seconds = Math.floor(
+        (distance % (1000 * 60))
+        / 1000
+    );
 
-    document.getElementById("countdown").innerHTML =
-
-    days + " Hari " +
-    hours + " Jam " +
-    minutes + " Menit " +
-    seconds + " Detik";
+    document.getElementById("days").innerHTML = days;
+    document.getElementById("hours").innerHTML = hours;
+    document.getElementById("minutes").innerHTML = minutes;
+    document.getElementById("seconds").innerHTML = seconds;
 
     if(distance < 0){
 
-        clearInterval(x);
+        clearInterval(countdown);
 
-        document.getElementById("countdown").innerHTML =
-        "Acara Sedang Berlangsung";
-
+        document.querySelector(".countdown-container").innerHTML = `
+            <div style="
+                color:#ffd95a;
+                font-size:35px;
+                font-family:Cinzel;
+                text-shadow:0 0 15px gold;
+            ">
+                ✨ Acara Dimulai ✨
+            </div>
+        `;
     }
 
 },1000);
+</script>
+
+
+<script>
+
+function changeImg(el){
+
+    const main = document.getElementById("mainImg");
+    const bg = document.getElementById("bg");
+
+    // fade effect
+    main.style.opacity = 0;
+
+    setTimeout(()=>{
+
+        main.src = el.src;
+        bg.src = el.src;
+
+        main.style.opacity = 1;
+
+    },200);
+}
+
+/* AUTO SLIDE CINEMATIC */
+let images = [
+    "img/yang ini (1).jpg",
+    "img/ARCL5991 Eric.jpg",
+    "img/bela.jpeg",
+    "img/ARCL4825 (1).jpg",
+    "img/bela.jpeg",
+    "img/ARCL5991 Eric.jpg"
+];
+
+let i = 0;
+
+setInterval(()=>{
+    i = (i + 1) % images.length;
+
+    document.getElementById("mainImg").src = images[i];
+    document.getElementById("bg").src = images[i];
+
+},5000);
 
 </script>
 
-<input id="name" placeholder="Masukkan nama">
-
-<button onclick="sendWA()">
-Kirim Undangan
-</button>
-
 <script>
-function sendWA(){
+function copyRekening(){
 
-let name = document.getElementById("name").value;
+    const rekening =
+    document.getElementById("rekening").innerText;
 
-let link = "https://wa.me/082248649334text=" +
-"Undangan%20pernikahan%20untuk%20" +
-name +
-"%20:%20https://websitekamu.com/?to=" + name;
+    navigator.clipboard.writeText(rekening);
 
-window.open(link, "_blank");
-
+    alert("Nomor rekening berhasil disalin ✨");
 }
 </script>
 
+
 </body>
 </html>
+
+
