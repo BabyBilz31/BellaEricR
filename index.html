@@ -2,46 +2,153 @@
 <html lang="id"name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"name="viewport" content="width=device-width, initial-scale=1.0">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<head><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<head>
 <title>Wedding Bella&Eric</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
 <style>
-    
 
 *{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+    }
 
-body{
+    html{
+      scroll-behavior:smooth;
+    }
+
+    /* LOCK SCROLL */
+    body.lock-scroll{
+      overflow:hidden;
+      height:100vh;
+    }
+
+    body{
     font-family:'Poppins',sans-serif;
     background:#000;
-    color:white;
+    color:rgb(255, 255, 255);
     overflow-x:hidden;
-}
+    }
 
-/* BACKGROUND MEWAH */
+    /* OPENING */
+    .opening{
+      position:fixed;
+      top:0;
+      left:0;
+      width:100%;
+      height:100vh;
 
-.hero{
-    height:100vh;
+      background:
+      linear-gradient(
+      rgba(0,0,0,0.5),
+      rgba(0,0,0,0.5)),
+      url('img/ARCL4825\ \(1\).jpg');
 
-    background:
-    linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)),
-    url('img/ARCL4825\ \(1\).jpg');
+      background-size:cover;
+      background-position:center;
 
-    background-size:cover;
-    background-position:center;
+      z-index:99999;
 
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    text-align:center;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      text-align:center;
 
-    position:relative;
-}
+      color:rgb(255, 255, 255);
+
+      transition:1s;
+    }
+
+    .opening.hide{
+      opacity:0;
+      visibility:hidden;
+    }
+
+    .opening-content{
+      padding:20px;
+      animation:muncul 1.5s ease;
+    }
+
+    .opening h1{
+      font-size:20px;
+      letter-spacing:3px;
+    }
+
+    .opening h2{
+      font-size:50px;
+      margin:20px 0;
+      font-family:cursive;
+    }
+
+    .opening p{
+      margin-bottom:25px;
+      font-size:16px;
+    }
+
+    .btn-buka{
+      padding:15px 35px;
+      border:none;
+      border-radius:50px;
+      background:gold;
+      color:rgb(0, 0, 0);
+      font-size:16px;
+      font-weight:bold;
+      cursor:pointer;
+      transition:0.3s;
+    }
+
+    .btn-buka:hover{
+      transform:scale(1.05);
+    }
+
+    /* ISI UNDANGAN */
+    .hero{
+      min-height:100vh;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      flex-direction:column;
+      text-align:center;
+      padding:40px;
+      background:white;
+    }
+
+    .hero h1{
+      font-size:45px;
+      margin-bottom:20px;
+    }
+
+    .hero p{
+      max-width:600px;
+      line-height:1.8;
+    }
+
+    @keyframes muncul{
+      from{
+        opacity:0;
+        transform:translateY(30px);
+      }
+
+      to{
+        opacity:1;
+        transform:translateY(0);
+      }
+    }
+
+    /* RESPONSIVE */
+    @media(max-width:768px){
+
+      .opening h2{
+        font-size:38px;
+      }
+
+      .hero h1{
+        font-size:32px;
+      }
+
+    }
 
 /* EFEK GOLD */
 
@@ -52,7 +159,7 @@ body{
     height:100%;
     background:
     radial-gradient(circle at top left,
-    rgba(212,175,55,0.3),
+    rgb(255, 255, 255),
     transparent 40%);
 
 }
@@ -69,7 +176,7 @@ body{
 .content h1{
     font-family:'Great Vibes',cursive;
     font-size:90px;
-    color:#d4af37;
+    color:#f0b80e;
     margin-bottom:10px;
 }
 
@@ -91,7 +198,7 @@ body{
     border:none;
     border-radius:50px;
     background:linear-gradient(45deg,#d4af37,#f6e27a);
-    color:#000;
+    color:#ffffff;
     font-size:18px;
     font-weight:bold;
     cursor:pointer;
@@ -124,7 +231,7 @@ body{
     max-width:1000px;
     margin:auto;
 
-    background:rgba(255,255,255,0.05);
+    background:rgba(238, 234, 234, 0.05);
 
     backdrop-filter:blur(10px);
 
@@ -196,10 +303,10 @@ body{
 /* FOOTER */
 
 footer{
-    background:#000;
+    background:#ffffff;
     text-align:center;
     padding:30px;
-    color:#aaa;
+    color:#ffffff;
 }
 
 /* ANIMATION */
@@ -244,7 +351,7 @@ footer{
     position:relative;
     height:100vh;
     overflow:hidden;
-    background:#000;
+    background:#ffffff;
     font-family:'Poppins',sans-serif;
 }
 
@@ -374,13 +481,11 @@ footer{
 }
 
 /* ================= MAPS ================= */
-.maps{
-    max-width:600px;
-    margin:auto;
-    border-radius:18px;
-    overflow:hidden;
-
-    box-shadow:0 10px 30px rgba(0,0,0,0.2);
+iframe{
+    width:100%;
+    height:300px;
+    border-radius:15px;
+    border:none;
 }
 
 .maps iframe{
@@ -403,7 +508,7 @@ footer{
 .social-icons a {
     font-size: 30px;
     margin: 20px;
-    color: #d8cdcd;
+    color: #ffffff;
     text-decoration: none;
     transition: 0.3s;
 }
@@ -513,7 +618,7 @@ body{
 }
 
 .story-content p{
-    color:#666;
+    color:#cb0000;
     line-height:1.8;
 }
 
@@ -523,7 +628,7 @@ body{
     position:absolute;
     width:4px;
     height:100%;
-    background:#f0c4cb;
+    background:#eb7084;
     left:50%;
     top:60%;
     z-index:-1;
@@ -602,7 +707,7 @@ body{
         /* SECTION */
 .comment-section{
     padding:100px 20px;
-    background:linear-gradient(to bottom,#fff,#fff5f7);
+    background:linear-gradient(to bottom,#ffffff,#087bc8);
     text-align:center;
 }
 
@@ -623,11 +728,11 @@ body{
 .comment-form{
     max-width:600px;
     margin:auto;
-    background:rgba(255,255,255,0.7);
+    background:rgba(255, 255, 255, 0.7);
     backdrop-filter:blur(12px);
     padding:35px;
     border-radius:30px;
-    box-shadow:0 10px 40px rgba(0,0,0,0.08);
+    box-shadow:0 10px 40px rgba(255, 255, 255, 0.666);
     animation:fadeUp 1.2s ease;
 }
 
@@ -638,10 +743,10 @@ body{
     margin-bottom:20px;
     border:none;
     border-radius:18px;
-    background:#fff;
+    background:#0664b1;
     font-size:15px;
     outline:none;
-    box-shadow:0 5px 20px rgba(0,0,0,0.05);
+    box-shadow:0 5px 20px rgba(241, 238, 238, 0.05);
     transition:0.3s;
 }
 
@@ -652,7 +757,7 @@ body{
 
 .comment-form button{
     background:linear-gradient(45deg,#d67b8a,#f3a6b3);
-    color:#fff;
+    color:#000000;
     border:none;
     padding:15px 35px;
     border-radius:50px;
@@ -677,7 +782,7 @@ body{
 
 /* CARD */
 .comment-card{
-    background:rgba(255,255,255,0.8);
+    background:rgb(233, 7, 7);
     backdrop-filter:blur(10px);
     padding:25px;
     border-radius:25px;
@@ -694,12 +799,12 @@ body{
     right:20px;
     top:15px;
     font-size:50px;
-    color:rgba(214,123,138,0.08);
+    color:rgba(246, 241, 242, 0.996);
 }
 
 .comment-card h4{
     margin:0;
-    color:#d67b8a;
+    color:#e39a13c7;
     font-size:18px;
 }
 
@@ -779,7 +884,7 @@ body{
     text-align:center;
     overflow:hidden;
     background:
-    radial-gradient(circle at top,#3a2a08,#120d02 70%);
+    radial-gradient(circle at top,#3a2a08,#190101bb 70%);
 }
 
 /* GOLD GLOW */
@@ -798,7 +903,7 @@ body{
 
 /* TITLE */
 .countdown-title{
-    color:#f7d774;
+    color:#dcdcdc;
     font-size:48px;
     margin-bottom:60px;
     font-family:'Cinzel',serif;
@@ -848,7 +953,7 @@ body{
     background:linear-gradient(
         120deg,
         transparent,
-        rgba(255,255,255,0.15),
+        rgba(171, 207, 218, 0.641),
         transparent
     );
     transform:rotate(25deg);
@@ -869,7 +974,7 @@ body{
 /* TEXT */
 .time-box small{
     margin-top:10px;
-    color:#fff4c9;
+    color:#ffffff;
     font-size:18px;
     letter-spacing:1px;
 }
@@ -942,13 +1047,13 @@ body{
     padding:100px 20px;
     text-align:center;
     background:
-    linear-gradient(180deg,#1a5ba591,#fff8ef);
+    linear-gradient(180deg,#ffffff92,#0b0700);
 }
 
 /* TITLE */
 .gift-title{
     font-size:48px;
-    color:#eff1f4;
+    color:#ffffff;
     font-family:'Cinzel',serif;
     margin-bottom:15px;
 }
@@ -956,7 +1061,7 @@ body{
 .gift-subtitle{
     max-width:700px;
     margin:auto;
-    color:#f5efef;
+    color:#ffffff;
     line-height:1.8;
     margin-bottom:60px;
 }
@@ -988,7 +1093,7 @@ body{
     background:linear-gradient(
         120deg,
         transparent,
-        rgba(212, 211, 207, 0.1),
+        rgba(200, 165, 25, 0.329),
         transparent
     );
 
@@ -1138,17 +1243,17 @@ html,body{
   margin:auto;
   padding:30px;
   border-radius:25px;
-  background:rgba(255,255,255,0.08);
+  background:rgba(111, 78, 25, 0.54);
   backdrop-filter:blur(8px);
-  box-shadow:0 10px 30px rgba(0,0,0,0.15);
-  color:white;
+  box-shadow:0 10px 30px rgb(213, 179, 5);
+  color:rgb(236, 238, 240);
 }
 
 .ucapan-section h2,
 .ucapan-section h3{
   text-align:center;
   margin-bottom:20px;
-  color:#FFD700;
+  color:#e9d20c;
 }
 
 #formUcapan{
@@ -1173,10 +1278,10 @@ html,body{
 
 #formUcapan button{
   padding:14px;
-  border:none;
+  border:rgb(255, 255, 255);
   border-radius:15px;
-  background:linear-gradient(45deg,#FFD700,#ffb300);
-  color:black;
+  background:linear-gradient(45deg,#000000,#db9702);
+  color:rgba(244, 122, 0, 0.67);
   font-weight:bold;
   cursor:pointer;
   transition:0.3s;
@@ -1191,7 +1296,7 @@ html,body{
 }
 
 .card-ucapan{
-  background:rgba(255,255,255,0.1);
+  background:rgba(244, 244, 246, 0.407);
   padding:18px;
   border-radius:18px;
   margin-bottom:15px;
@@ -1233,56 +1338,46 @@ html,body{
 </style>
 <style>
 
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
+/* TOMBOL MUSIC */
+.music-button{
+  position:fixed;
+  right:20px;
+  bottom:20px;
+
+  width:55px;
+  height:55px;
+
+  border:none;
+  border-radius:50%;
+
+  background:gold;
+  color:black;
+
+  font-size:22px;
+  cursor:pointer;
+
+  z-index:9999;
+
+  box-shadow:0 5px 15px rgba(0,0,0,0.3);
+
+  animation:spin 4s linear infinite;
 }
 
-html, body{
-  width:100%;
-  overflow-x:hidden;
-  scroll-behavior:smooth;
+/* SAAT PAUSE */
+.music-button.pause{
+  animation-play-state:paused;
+  opacity:0.6;
 }
 
-/* supaya tidak melebar di hp */
-img, video{
-  max-width:100%;
-  height:auto;
-}
+/* ANIMASI */
+@keyframes spin{
 
-/* container responsive */
-.container{
-  width:90%;
-  max-width:700px;
-  margin:auto;
-}
-
-/* input supaya hp tidak auto zoom */
-input,
-textarea,
-select,
-button{
-  font-size:16px;
-}
-
-/* responsive mobile */
-@media(max-width:768px){
-
-  body{
-    font-size:14px;
+  from{
+    transform:rotate(0deg);
   }
 
-  h1{
-    font-size:32px;
-  }
-
-  h2{
-    font-size:24px;
-  }
-
-  .section{
-    padding:20px;
+  to{
+    transform:rotate(360deg);
   }
 
 }
@@ -1300,20 +1395,12 @@ button{
 </head>
 
 <body>
-    
-    
 
-<!-- MUSIC -->
 
-<audio id="music" loop>
-    <source src="music/Canon in D - Pachelbel violin cover [BEST WEDDING VERSION].mp3" type="audio/mpeg">
-</audio>
+<!-- HALAMAN PERTAMA -->
+  <section class="opening" id="opening">
 
-<!-- HERO -->
-
-<section class="hero">
-
-    <div class="content">
+    <div class="opening-content">
 
         <h1>Wedding Invitation</h1>
 
@@ -1330,14 +1417,23 @@ button{
         
         <div style="margin-top:80px;"></div>
 
-        <button class="btn" onclick="openInvitation()">
-            Buka Undangan
-        </button>
+        <button class="btn-buka" onclick="bukaUndangan()">
+        Buka Undangan
+      </button>
 
     </div>
 
-</section>
+</section id="home">
 
+    <!-- MUSIC -->
+<audio id="bgMusic" loop>
+  <source src="music/Shania Twain - You’re Still The One (Official Music Video).mp3" type="audio/mp3">
+</audio>
+
+<!-- TOMBOL MUSIC -->
+<button id="musicButton" class="music-button">
+  🎵
+</button>
 
 <!-- CONTENT -->
 
@@ -1625,14 +1721,14 @@ button{
     <h1>Terimah Kasih Atas Kehadiran</h1>
     <p>bapak/ibu saudara/1</p>
 
-    <!-- MAPS -->
-    <div class="maps">
-        <iframe 
-        src="https://www.google.com/maps/place/Batu+Lintang,+Kec.+Ulu+Musi,+Kabupaten+Empat+Lawang,+Sumatera+Selatan/@-3.6872388,102.7460118,13z/data=!3m1!4b1!4m6!3m5!1s0x2e36d5743a33e63d:0xf3ff879134eed759!8m2!3d-3.6879424!4d102.7968507!16s%2Fg%2F12hhhkdxy?entry=ttu&g_ep=EgoyMDI2MDUxMy4wIKXMDSoASAFQAw%3D%3D" 
-        allowfullscreen="" loading="lazy">
-        </iframe>
-    </div>
+   <!-- ================= MAPS ================= -->
+<section>
+<div class="box">
+    <h2>Lokasi Acara</h2>
 
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18..."></iframe>
+
+</div>
 </section>
 
 <!-- LIGHTBOX -->
@@ -1649,7 +1745,7 @@ button{
 
 /* MUSIK */
 
-function openInvitation(){
+function bukaUndangan(){
 
     document.getElementById('music').play();
 
@@ -1804,6 +1900,77 @@ document.getElementById("formUcapan")
   .appendChild(card);
 
   document.getElementById("formUcapan").reset();
+
+});
+
+</script>
+  <script>
+
+    // LOCK SCROLL SAAT AWAL
+    document.body.classList.add("lock-scroll");
+
+    // BUKA UNDANGAN
+    function bukaUndangan(){
+
+      // buka scroll
+      document.body.classList.remove("lock-scroll");
+
+      // animasi hilang
+      document
+      .getElementById("opening")
+      .classList.add("hide");
+
+      // hapus elemen setelah animasi
+      setTimeout(() => {
+
+        document
+        .getElementById("opening")
+        .style.display = "none";
+
+      },1000);
+
+    }
+
+  </script>
+<script>
+
+const music = document.getElementById("bgMusic");
+const musicButton = document.getElementById("musicButton");
+const tombolBuka = document.querySelector(".btn-buka");
+
+let playing = false;
+
+/* SAAT TOMBOL BUKA DIKLIK */
+tombolBuka.addEventListener("click", function(){
+
+  music.play();
+
+  playing = true;
+
+  musicButton.classList.remove("pause");
+
+});
+
+/* PLAY / PAUSE */
+musicButton.addEventListener("click", function(){
+
+  if(playing){
+
+    music.pause();
+
+    musicButton.classList.add("pause");
+
+    playing = false;
+
+  }else{
+
+    music.play();
+
+    musicButton.classList.remove("pause");
+
+    playing = true;
+
+  }
 
 });
 
