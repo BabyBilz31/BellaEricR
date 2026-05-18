@@ -1,16 +1,14 @@
 <!DOCTYPE html>
-<html lang="id">
-<head><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<html lang="id"name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"name="viewport" content="width=device-width, initial-scale=1.0">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<!-- PASANG DI <head> -->
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-
+<head><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <title>Wedding Bella&Eric</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
 <style>
+    
 
 *{
     margin:0;
@@ -1125,10 +1123,168 @@ p{
 
 }
 
-/* AGAR TIDAK MELEBAR */
+                /* AGAR TIDAK MELEBAR */
 html,body{
     max-width:100%;
     overflow-x:hidden;
+}
+
+</style>
+<style>
+
+.ucapan-section{
+  width:90%;
+  max-width:700px;
+  margin:auto;
+  padding:30px;
+  border-radius:25px;
+  background:rgba(255,255,255,0.08);
+  backdrop-filter:blur(8px);
+  box-shadow:0 10px 30px rgba(0,0,0,0.15);
+  color:white;
+}
+
+.ucapan-section h2,
+.ucapan-section h3{
+  text-align:center;
+  margin-bottom:20px;
+  color:#FFD700;
+}
+
+#formUcapan{
+  display:flex;
+  flex-direction:column;
+  gap:15px;
+}
+
+#formUcapan input,
+#formUcapan select,
+#formUcapan textarea{
+  padding:14px;
+  border:none;
+  border-radius:15px;
+  outline:none;
+  font-size:15px;
+}
+
+#formUcapan textarea{
+  resize:none;
+}
+
+#formUcapan button{
+  padding:14px;
+  border:none;
+  border-radius:15px;
+  background:linear-gradient(45deg,#FFD700,#ffb300);
+  color:black;
+  font-weight:bold;
+  cursor:pointer;
+  transition:0.3s;
+}
+
+#formUcapan button:hover{
+  transform:scale(1.03);
+}
+
+.daftar-ucapan{
+  margin-top:40px;
+}
+
+.card-ucapan{
+  background:rgba(255,255,255,0.1);
+  padding:18px;
+  border-radius:18px;
+  margin-bottom:15px;
+}
+
+.card-ucapan h4{
+  margin:0;
+  margin-bottom:8px;
+}
+
+.card-ucapan p{
+  margin-top:10px;
+  line-height:1.6;
+}
+
+.status{
+  padding:5px 12px;
+  border-radius:10px;
+  font-size:13px;
+  font-weight:bold;
+}
+
+.hadir{
+  background:#1abc9c;
+}
+
+.tidak{
+  background:#e74c3c;
+}
+
+@media(max-width:600px){
+
+  .ucapan-section{
+    padding:20px;
+  }
+
+}
+
+</style>
+<style>
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+html, body{
+  width:100%;
+  overflow-x:hidden;
+  scroll-behavior:smooth;
+}
+
+/* supaya tidak melebar di hp */
+img, video{
+  max-width:100%;
+  height:auto;
+}
+
+/* container responsive */
+.container{
+  width:90%;
+  max-width:700px;
+  margin:auto;
+}
+
+/* input supaya hp tidak auto zoom */
+input,
+textarea,
+select,
+button{
+  font-size:16px;
+}
+
+/* responsive mobile */
+@media(max-width:768px){
+
+  body{
+    font-size:14px;
+  }
+
+  h1{
+    font-size:32px;
+  }
+
+  h2{
+    font-size:24px;
+  }
+
+  .section{
+    padding:20px;
+  }
+
 }
 
 </style>
@@ -1409,6 +1565,52 @@ html,body{
     </div>
 
 </section>
+<section class="ucapan-section">
+
+  <h2>Konfirmasi Kehadiran</h2>
+
+  <form id="formUcapan">
+
+    <input type="text" id="nama" placeholder="Nama Anda" required>
+
+    <select id="kehadiran">
+      <option value="Hadir">Hadir</option>
+      <option value="Tidak Hadir">Tidak Hadir</option>
+      <option value="Masih Diusahakan">Masih Diusahakan</option>
+    </select>
+
+    <textarea 
+      id="ucapan" 
+      rows="4" 
+      placeholder="Tulis ucapan dan doa..."
+      required
+    ></textarea>
+
+    <button type="submit">
+      Kirim Ucapan
+    </button>
+
+  </form>
+
+  <div class="daftar-ucapan">
+
+    <h3>Ucapan Tamu</h3>
+
+    <div class="card-ucapan">
+      <h4>Andi Pratama</h4>
+      <span class="status hadir">Hadir</span>
+      <p>Semoga menjadi keluarga sakinah mawaddah warahmah 🤍</p>
+    </div>
+
+    <div class="card-ucapan">
+      <h4>Siti Rahma</h4>
+      <span class="status tidak">Tidak Hadir</span>
+      <p>Maaf belum bisa hadir, semoga lancar sampai hari bahagia.</p>
+    </div>
+
+  </div>
+
+</section>
 
 <!-- ================= LOKASI ACARA ================= -->
 <section class="lokasi">
@@ -1562,6 +1764,49 @@ function copyRekening(){
 
     alert("Nomor rekening berhasil disalin ✨");
 }
+</script>
+<script>
+
+document.getElementById("formUcapan")
+.addEventListener("submit", function(e){
+
+  e.preventDefault();
+
+  const nama = document.getElementById("nama").value;
+  const hadir = document.getElementById("kehadiran").value;
+  const ucapan = document.getElementById("ucapan").value;
+
+  const card = document.createElement("div");
+
+  card.classList.add("card-ucapan");
+
+  let warnaStatus = "";
+
+  if(hadir == "Hadir"){
+    warnaStatus = "hadir";
+  } else {
+    warnaStatus = "tidak";
+  }
+
+  card.innerHTML = `
+  
+    <h4>${nama}</h4>
+    
+    <span class="status ${warnaStatus}">
+      ${hadir}
+    </span>
+
+    <p>${ucapan}</p>
+
+  `;
+
+  document.querySelector(".daftar-ucapan")
+  .appendChild(card);
+
+  document.getElementById("formUcapan").reset();
+
+});
+
 </script>
 
 
